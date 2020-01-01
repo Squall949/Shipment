@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FedExShippingWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FedExShippingWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:7061/api/FedExShippingService..svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:7061/api/FedExShippingService..svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FedExShippingWCF.FedExShipService" />
+  <xs:import schemaLocation="http://localhost:7061/api/FedExShippingService..svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="FedExWebServiceResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorMessages" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsValidated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JsonResult" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FedExWebServiceResult" nillable="true" type="tns:FedExWebServiceResult" />
+  <xs:complexType name="FedExWebServiceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bill_to" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FedExShippingWCF.FedExShipService" minOccurs="0" name="Commodity" nillable="true" type="q2:ArrayOfCommodity" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestAddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestAddress2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestCName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestCompany" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestPostcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailFail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id_num" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEmail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasterTrackNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Partno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Podate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecipientAccNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceType" type="tns:ShippingServiceType" />
+      <xs:element minOccurs="0" name="ShippingAccNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingAddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingAddress2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingAttention" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingPostcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalQty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpAccNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpAddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpAddress2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpAttention" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpCName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpPostcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TpTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FedExWebServiceRequest" nillable="true" type="tns:FedExWebServiceRequest" />
+  <xs:simpleType name="ShippingServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NO_SET" />
+      <xs:enumeration value="FEDEX_GROUND">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">92</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUND_HOME_DELIVERY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">90</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDEX_EXPRESS_SAVER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STANDARD_OVERNIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRIORITY_OVERNIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDEX_2_DAY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDEX_2_DAY_AM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">49</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDEX_2_DAY_FREIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDEX_3_DAY_FREIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIRST_OVERNIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERNATIONAL_ECONOMY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERNATIONAL_ECONOMY_FREIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">86</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERNATIONAL_PRIORITY_FREIGHT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShippingServiceType" nillable="true" type="tns:ShippingServiceType" />
+  <xs:complexType name="FedExRateResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FedExWebServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NetCharge" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FedExRateResult" nillable="true" type="tns:FedExRateResult" />
+  <xs:complexType name="FedExCancelShipmentRequest">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FedExShippingWCF.FedExShipService" minOccurs="0" name="TrackingIdType" type="q3:TrackingIdType" />
+      <xs:element minOccurs="0" name="TrackingNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FedExCancelShipmentRequest" nillable="true" type="tns:FedExCancelShipmentRequest" />
+</xs:schema>
