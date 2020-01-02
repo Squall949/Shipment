@@ -116,6 +116,25 @@ public partial class _Default : Page
 
         dt.Rows.Add(dt.NewRow());
         dt.Rows[0].BeginEdit();
+        dt.Rows[0]["sf_cname"] = "LA Lakers";
+        dt.Rows[0]["sf_attention"] = "James";
+        dt.Rows[0]["sf_city"] = "Los Angeles";
+        dt.Rows[0]["sf_address1"] = "1111 South Figueroa Street";
+        dt.Rows[0]["sf_state"] = "CA";
+        dt.Rows[0]["sf_postcode"] = "90015";
+        dt.Rows[0]["emailfail"] = "james@lk.nba.com";
+        dt.Rows[0]["sf_tel"] = "2424242424";
+        dt.Rows[0]["cname"] = "Trump";
+        dt.Rows[0]["company"] = "White House";
+        dt.Rows[0]["city"] = "Washington";
+        dt.Rows[0]["address1"] = "1600 Pennsylvania Ave NW";
+        dt.Rows[0]["state"] = "DC";
+        dt.Rows[0]["postcode"] = "20500";
+        dt.Rows[0]["email"] = "trump@white.com";
+        dt.Rows[0]["tel"] = "1234567890";
+        dt.Rows[0]["account_no"] = "510087160";
+        dt.Rows[0]["payorName"] = "LA Lakers";
+        dt.Rows[0]["pono"] = "TEST2020";
         dt.Rows[0]["isemail"] = true;
         dt.Rows[0].EndEdit();
         dt.AcceptChanges();
@@ -153,6 +172,12 @@ public partial class _Default : Page
         dt.Rows.Add(dt.NewRow());
         dt.Rows[0].BeginEdit();
         dt.Rows[0]["id_num"] = string.Format("{0}_{1}", DateTime.Today.ToString("MMddyyyy"), 0);
+        dt.Rows[0]["weight"] = "2";
+        dt.Rows[0]["length"] = "5";
+        dt.Rows[0]["width"] = "5";
+        dt.Rows[0]["height"] = "5";
+        dt.Rows[0]["partno"] = "TEST0101";
+        dt.Rows[0]["description"] = "surprise";
         dt.Rows[0]["service_type_fx"] = "90";
         dt.Rows[0]["service_type_ups"] = "GND";
         dt.Rows[0]["isFreight"] = false;
@@ -177,6 +202,7 @@ public partial class _Default : Page
     {
         btnStep1Update.Visible = divStep4.Visible;
         btnStep1.Visible = !divStep4.Visible;
+        SetDvAddressFields();
     }
 
     protected void dvShippingTo_DataBound(object sender, EventArgs e)
@@ -196,6 +222,69 @@ public partial class _Default : Page
     {
         shipmentTable.Rows[0]["country"] = ((DropDownList)sender).SelectedValue;
         StayOnStep1();
+    }
+
+    private void SetDvAddressFields()
+    {
+        TextBox sf_cname = (TextBox)dvShipping_from.FindControl("txtSfName");
+        sf_cname.Text = shipmentTable.Rows[0]["sf_cname"].ToString();
+
+        TextBox sf_attention = (TextBox)dvShipping_from.FindControl("txtSfAttention");
+        sf_attention.Text = shipmentTable.Rows[0]["sf_attention"].ToString();
+
+        DropDownList ddlSfCountry = (DropDownList)dvShipping_from.FindControl("ddlSfCountry");
+        ddlSfCountry.SelectedValue = string.IsNullOrEmpty(shipmentTable.Rows[0]["sf_country"].ToString()) ? "US" : shipmentTable.Rows[0]["sf_country"].ToString();
+
+        TextBox sf_address1 = (TextBox)dvShipping_from.FindControl("txtSfAddress1");
+        sf_address1.Text = shipmentTable.Rows[0]["sf_address1"].ToString();
+
+        TextBox sf_address2 = (TextBox)dvShipping_from.FindControl("txtSfAddress2");
+        sf_address2.Text = shipmentTable.Rows[0]["sf_address2"].ToString();
+
+        TextBox sf_city = (TextBox)dvShipping_from.FindControl("txtSfCity");
+        sf_city.Text = shipmentTable.Rows[0]["sf_city"].ToString();
+
+        TextBox sf_state = (TextBox)dvShipping_from.FindControl("txtSfState");
+        sf_state.Text = shipmentTable.Rows[0]["sf_state"].ToString();
+
+        TextBox sf_postcode = (TextBox)dvShipping_from.FindControl("txtSfPostcode");
+        sf_postcode.Text = shipmentTable.Rows[0]["sf_postcode"].ToString();
+
+        TextBox sf_tel = (TextBox)dvShipping_from.FindControl("txtSfTel");
+        sf_tel.Text = shipmentTable.Rows[0]["sf_tel"].ToString();
+
+        TextBox emailfail = (TextBox)dvShipping_from.FindControl("txtSfEmail");
+        emailfail.Text = shipmentTable.Rows[0]["emailfail"].ToString();
+
+        TextBox cname = (TextBox)dvShipping_to.FindControl("txtName");
+        cname.Text = shipmentTable.Rows[0]["cname"].ToString();
+
+        TextBox company = (TextBox)dvShipping_to.FindControl("txtCompany");
+        company.Text = shipmentTable.Rows[0]["company"].ToString();
+
+        DropDownList ddlCountry = (DropDownList)dvShipping_to.FindControl("ddlCountry");
+        ddlCountry.SelectedValue = string.IsNullOrEmpty(shipmentTable.Rows[0]["country"].ToString()) ? "US" : shipmentTable.Rows[0]["country"].ToString();
+
+        TextBox address1 = (TextBox)dvShipping_to.FindControl("txtAddress1");
+        address1.Text = shipmentTable.Rows[0]["address1"].ToString();
+
+        TextBox address2 = (TextBox)dvShipping_to.FindControl("txtAddress2");
+        address2.Text = shipmentTable.Rows[0]["address2"].ToString();
+
+        TextBox city = (TextBox)dvShipping_to.FindControl("txtCity");
+        city.Text = shipmentTable.Rows[0]["city"].ToString();
+
+        TextBox state = (TextBox)dvShipping_to.FindControl("txtState");
+        state.Text = shipmentTable.Rows[0]["state"].ToString();
+
+        TextBox postcode = (TextBox)dvShipping_to.FindControl("txtPostcode");
+        postcode.Text = shipmentTable.Rows[0]["postcode"].ToString();
+
+        TextBox tel = (TextBox)dvShipping_to.FindControl("txtTel");
+        tel.Text = shipmentTable.Rows[0]["tel"].ToString();
+
+        TextBox email = (TextBox)dvShipping_to.FindControl("txtEmail");
+        email.Text = shipmentTable.Rows[0]["email"].ToString();
     }
 
     private bool Step1Evaluation()
@@ -288,7 +377,11 @@ public partial class _Default : Page
     {
         bool flag = Step1Evaluation();
 
-        if (flag) return;
+        if (flag)
+        {
+            StayOnStep1();
+            return;
+        }
 
         BindDataSource();
         //divStep1.Visible = false;
@@ -519,7 +612,11 @@ public partial class _Default : Page
 
         bool flag = Step2Evaluation();
 
-        if (flag) return;
+        if (flag)
+        {
+            StayOnStep2();
+            return;
+        }
 
         //divStep2.Visible = false;
         divStep3.Visible = true;
@@ -691,15 +788,15 @@ public partial class _Default : Page
         DropDownList ddlPayor = (DropDownList)sender;
 
         string payor = shipmentTable.Rows[0]["bill_to"].ToString();
-        if (ddlPayor.SelectedValue != payor)
-        {
+        //if (ddlPayor.SelectedValue != payor)
+        //{
             if (string.IsNullOrEmpty(payor))
                 shipmentTable.Rows[0]["bill_to"] = ddlPayor.SelectedValue;
             else
                 ddlPayor.SelectedValue = payor;
 
             SetPaymentFieldVisibility(ddlPayor.SelectedValue);
-        }
+        //}
     }
 
     protected void ddlPayor_SelectedIndexChanged(object sender, EventArgs e)
@@ -725,14 +822,6 @@ public partial class _Default : Page
         else
         {
             dvShipping_payment.Fields[1].Visible = true;
-
-            //dvShipping_payment.Fields[2].Visible = false;
-            //BindShipmentAcc(selectedValue == "sender");
-
-            //if (ddlShipper.SelectedValue == "fedex")
-            //    shipmentTable.Rows[0]["bill_to"] = selectedValue == "sender" ? "1" : "3";
-            //else
-            //    shipmentTable.Rows[0]["bill_to"] = selectedValue == "sender" ? "SHP" : "TP";
         }
 
         DisplayPayorFields();
@@ -888,7 +977,11 @@ public partial class _Default : Page
     {
         bool flag = Step3Evaluation();
 
-        if (flag) return;
+        if (flag)
+        {
+            StayOnStep3();
+            return;
+        }
 
         divStep4.Visible = true;
         GoToStep4();

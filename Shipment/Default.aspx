@@ -175,8 +175,8 @@
                                                 <h3>Fill in the package details</h3>
                                                 <asp:Menu ID="menuShippingType" Width="200px" runat="server" Orientation="Horizontal" OnMenuItemClick="menuShippingType_MenuItemClick" CssClass="menuShippingType">
                                                     <Items>
-                                                        <asp:MenuItem Text="Package" Value="0"></asp:MenuItem>
-                                                        <asp:MenuItem Text="Freight" Value="1" Enabled="false"></asp:MenuItem>
+                                                        <%--<asp:MenuItem Text="Package" Value="0"></asp:MenuItem>--%>
+                                                        <%--<asp:MenuItem Text="Freight" Value="1" Enabled="false"></asp:MenuItem>--%>
                                                     </Items>
                                                 </asp:Menu>
                                                 <asp:MultiView runat="server" ID="multiView" ActiveViewIndex="0">
@@ -636,17 +636,16 @@
                                                                 <asp:DropDownList ID="ddlPayor" runat="server" AutoPostBack="True" SelectedValue='<%# Bind("bill_to") %>' Width="90%"
                                                                     DataValueField="bill_to" DataTextField="bill_to" CssClass="Adj-DDL-Height" OnDataBound="ddlPayor_DataBound"
                                                                     OnSelectedIndexChanged="ddlPayor_SelectedIndexChanged">
-                                                                    <asp:ListItem Value="third">Third Party</asp:ListItem>
                                                                     <asp:ListItem Value="receiver">Recipient</asp:ListItem>
-                                                                    <asp:ListItem Value="sender">Sender</asp:ListItem>
-                                                                    <%--<asp:ListItem Value="credit">Credit Card</asp:ListItem>--%>
+                                                                    <asp:ListItem Value="third" Enabled="false">Third Party</asp:ListItem>
+                                                                    <asp:ListItem Value="sender" Enabled="false">Sender</asp:ListItem>
                                                                 </asp:DropDownList>
                                                             </InsertItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="Client:" ItemStyle-HorizontalAlign="Left">
                                                             <InsertItemTemplate>
                                                                 <asp:DropDownList ID="ddlClient" runat="server" AutoPostBack="True" Width="90%" OnPreRender="ddlClient_PreRender" OnDataBound="ddlClient_DataBound"
-                                                                    DataValueField="id_num" DataTextField="client" CssClass="Adj-DDL-Height" OnSelectedIndexChanged="ddlClient_SelectedIndexChanged">
+                                                                     CssClass="Adj-DDL-Height" OnSelectedIndexChanged="ddlClient_SelectedIndexChanged">
                                                                 </asp:DropDownList>
                                                             </InsertItemTemplate>
                                                         </asp:TemplateField>
