@@ -8,6 +8,8 @@
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
     <link href="../css/shipment.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="Scripts/jquery-1.11.1.min.js"></script>
+     <script type="text/javascript" src="Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.cookie.js"></script>
     <script type="text/javascript" src="Scripts/utility.js"></script>
 </head>
 <body>

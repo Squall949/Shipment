@@ -20,7 +20,7 @@
 			}, 200);
 		}
 	
-        $('form').live("submit", function () {
+        $('form').on("submit", function () {
             loading();
         });
 		

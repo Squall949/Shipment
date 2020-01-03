@@ -5,6 +5,7 @@ using System.Data;
 using System.Web.Services.Protocols;
 using System.Net;
 using FedExAPIWCF;
+using System.Globalization;
 
 /// <summary>
 /// FedEx API Utility
@@ -129,6 +130,21 @@ public class FedExHelper
         cmd.partNumberField = partno;
 
         return cmd;
+    }
+
+    public static void WriteFileToResponse(HttpContext context, byte[] bytes, string fileName)
+    {
+
+        var bytesLength = bytes.Length.ToString(CultureInfo.InvariantCulture);
+        var response = context.Response;
+        response.Clear();
+        response.Buffer = true;
+        response.AddHeader("Content-Length", bytesLength);
+        response.AddHeader("Content-Disposition", "attachment; filename=" + fileName);
+        response.ContentType = "application/pdf";
+        response.BinaryWrite(bytes);
+        response.Flush();
+        response.End();
     }
 
     #endregion

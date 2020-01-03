@@ -1133,9 +1133,7 @@ public partial class _Default : Page
             }
             Response.SetCookie(cookie);
 
-            Response.ContentType = "application/pdf";
-            Response.AddHeader("content-length", labelList[0].Length.ToString());
-            Response.BinaryWrite(labelList[0]);
+            FedExHelper.WriteFileToResponse(HttpContext.Current, labelList[0], string.Format("ShippingLabels_{0}.pdf", DateTime.Now.ToString("MM/dd/yyyy hh:mm tt")));
         }
     }
 
