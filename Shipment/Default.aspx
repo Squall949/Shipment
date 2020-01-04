@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="../css/style.css" type="text/css" rel="stylesheet" />
-    <link href="../css/shipment.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/shipment.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="Scripts/jquery-1.11.1.min.js"></script>
      <script type="text/javascript" src="Scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.cookie.js"></script>
@@ -385,15 +385,15 @@
                                                                 </asp:TemplateField>
                                                                 <asp:TemplateField>
                                                                     <EditItemTemplate>
-                                                                        <asp:ImageButton ID="ibUpdate" runat="server" ImageUrl="../images/action/edit-save.png" Text="Save" ToolTip="Save" CommandName="Update" />
-                                                                        <asp:ImageButton ID="ibCancel" runat="server" ImageUrl="../images/action/edit-undo.png" Text="Cancel" ToolTip="Cancel" CommandName="Cancel" />
+                                                                        <asp:ImageButton ID="ibUpdate" runat="server" ImageUrl="images/action/edit-save.png" Text="Save" ToolTip="Save" CommandName="Update" />
+                                                                        <asp:ImageButton ID="ibCancel" runat="server" ImageUrl="images/action/edit-undo.png" Text="Cancel" ToolTip="Cancel" CommandName="Cancel" />
                                                                     </EditItemTemplate>
                                                                     <ItemTemplate>
-                                                                        <asp:ImageButton ID="ibEdit" runat="server" ImageUrl="../images/action/edit.png" Text="Edit" ToolTip="Edit" CommandName="Edit" />
-                                                                        <asp:ImageButton ID="ibDelete" runat="server" ImageUrl="../images/action/trash.png" Text="Delete" ToolTip="Delete Package" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to Remove the package?')" />
+                                                                        <asp:ImageButton ID="ibEdit" runat="server" ImageUrl="images/action/edit.png" Text="Edit" ToolTip="Edit" CommandName="Edit" />
+                                                                        <asp:ImageButton ID="ibDelete" runat="server" ImageUrl="images/action/trash.png" Text="Delete" ToolTip="Delete Package" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to Remove the package?')" />
                                                                     </ItemTemplate>
                                                                     <FooterTemplate>
-                                                                        <asp:ImageButton ID="ibAdd" runat="server" ImageUrl="../images/action/add.png" Text="Add" ToolTip="Add" OnClick="gvPackages_Add" />
+                                                                        <asp:ImageButton ID="ibAdd" runat="server" ImageUrl="images/action/add.png" Text="Add" ToolTip="Add" OnClick="gvPackages_Add" />
                                                                     </FooterTemplate>
                                                                 </asp:TemplateField>
                                                             </Columns>
@@ -599,15 +599,15 @@
                                                                 </asp:TemplateField>
                                                                 <asp:TemplateField>
                                                                     <EditItemTemplate>
-                                                                        <asp:ImageButton ID="ibUpdate" runat="server" ImageUrl="../images/action/edit-save.png" Text="Save" ToolTip="Save" CommandName="Update" />
-                                                                        <asp:ImageButton ID="ibCancel" runat="server" ImageUrl="../images/action/edit-undo.png" Text="Cancel" ToolTip="Cancel" CommandName="Cancel" />
+                                                                        <asp:ImageButton ID="ibUpdate" runat="server" ImageUrl="images/action/edit-save.png" Text="Save" ToolTip="Save" CommandName="Update" />
+                                                                        <asp:ImageButton ID="ibCancel" runat="server" ImageUrl="images/action/edit-undo.png" Text="Cancel" ToolTip="Cancel" CommandName="Cancel" />
                                                                     </EditItemTemplate>
                                                                     <ItemTemplate>
-                                                                        <asp:ImageButton ID="ibEdit" runat="server" ImageUrl="../images/action/edit.png" Text="Edit" ToolTip="Edit" CommandName="Edit" />
-                                                                        <%--<asp:ImageButton ID="ibDelete" runat="server" ImageUrl="../images/action/trash.png" Text="Delete" ToolTip="Delete Package" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to Remove the package?')" />--%>
+                                                                        <asp:ImageButton ID="ibEdit" runat="server" ImageUrl="images/action/edit.png" Text="Edit" ToolTip="Edit" CommandName="Edit" />
+                                                                        <%--<asp:ImageButton ID="ibDelete" runat="server" ImageUrl="images/action/trash.png" Text="Delete" ToolTip="Delete Package" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to Remove the package?')" />--%>
                                                                     </ItemTemplate>
                                                                     <FooterTemplate>
-                                                                        <asp:ImageButton ID="ibAdd" runat="server" ImageUrl="../images/action/add.png" Text="Add" ToolTip="Add" OnClick="gvPackages_Add" />
+                                                                        <asp:ImageButton ID="ibAdd" runat="server" ImageUrl="images/action/add.png" Text="Add" ToolTip="Add" OnClick="gvPackages_Add" />
                                                                     </FooterTemplate>
                                                                 </asp:TemplateField>
                                                             </Columns>
@@ -615,7 +615,7 @@
                                                     </asp:View>
                                                 </asp:MultiView>
                                                 <%--<div visible="false" runat="server" id="div_commodity">
-                                                    <h4 style="display:inline-block; margin-right:5px;">Please edit commodity!</h4><asp:ImageButton ID="imbCommodity" runat="server" ImageUrl="../images/action/pay_by_group.png" OnClick="imbCommodity_Click" />
+                                                    <h4 style="display:inline-block; margin-right:5px;">Please edit commodity!</h4><asp:ImageButton ID="imbCommodity" runat="server" ImageUrl="images/action/pay_by_group.png" OnClick="imbCommodity_Click" />
                                                 </div>--%>
                                                 <div style="display:flex; justify-content:flex-end; margin-top: 10px;">
                                                     <asp:Button ID="btnStep2Back" runat="server" Text="Back" Width="90" Height="40" OnClick="btnStep2Back_Click" CssClass="btn-back" />
@@ -724,7 +724,7 @@
                                             <div id="expcol_4">
                                                 <h3>Please review the shipment</h3>
                                                 <h4 style="display:inline-block;margin-bottom:10px; margin-top:10px;">From:</h4>
-                                                <asp:ImageButton runat="server" ImageUrl="../images/action/edit2.png" OnClick="reviewStep1_Click" />
+                                                <asp:ImageButton runat="server" ImageUrl="images/action/edit2.png" OnClick="reviewStep1_Click" />
                                                 <asp:DetailsView ID="dvConfirm_From" runat="server" Font-Size="13px" Width="60%"
                                                     Font-Names="Verdana" AllowPaging="False" GridLines="None" AutoGenerateRows="False" CellPadding="3">
 
@@ -753,7 +753,7 @@
                                                     </Fields>
                                                 </asp:DetailsView>
                                                 <h4 style="display:inline-block;margin-bottom:10px; margin-top:10px;">To:</h4>
-                                                <asp:ImageButton runat="server" ImageUrl="../images/action/edit2.png" OnClick="reviewStep1_Click" />
+                                                <asp:ImageButton runat="server" ImageUrl="images/action/edit2.png" OnClick="reviewStep1_Click" />
                                                 <asp:DetailsView ID="dvConfirm_To" runat="server" Font-Size="13px" Width="60%" OnDataBound="dvConfirm_DataBound"
                                                     Font-Names="Verdana" AllowPaging="False" GridLines="None" AutoGenerateRows="False" CellPadding="3">
 
@@ -782,7 +782,7 @@
                                                     </Fields>
                                                 </asp:DetailsView>
                                                 <h4 style="display:inline-block;margin-bottom:10px; margin-top:10px;">Packages:</h4>
-                                                <asp:ImageButton runat="server" ImageUrl="../images/action/edit2.png" OnClick="reviewStep2_Click" />
+                                                <asp:ImageButton runat="server" ImageUrl="images/action/edit2.png" OnClick="reviewStep2_Click" />
                                                 <asp:GridView ID="gvReview" runat="server"
                                                     GridLines="Both" Font-Size="13px" Font-Names="Verdana" AllowPaging="True" PageSize="10" PagerSettings-Mode="NumericFirstLast"
                                                     AutoGenerateColumns="False" OnRowCreated="gvPackages_RowCreated">
@@ -890,7 +890,7 @@
                                                     </Columns>
                                                 </asp:GridView>
                                                 <h4 style="display:inline-block;margin-bottom:10px; margin-top:10px;">Payment:</h4>
-                                                <asp:ImageButton runat="server" ImageUrl="../images/action/edit2.png" OnClick="reviewStep3_Click" />
+                                                <asp:ImageButton runat="server" ImageUrl="images/action/edit2.png" OnClick="reviewStep3_Click" />
                                                 <asp:DetailsView ID="dvConfirm_Payment" runat="server" Font-Size="13px" Width="60%" CellSpacing="3"
                                                     Font-Names="Verdana" AllowPaging="False" GridLines="None" AutoGenerateRows="False">
 
