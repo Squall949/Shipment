@@ -309,7 +309,7 @@
                                                                         </asp:DropDownList>
                                                                     </EditItemTemplate>
                                                                     <ItemTemplate>
-                                                                        <asp:Label runat="server" ID="lblServiceTypeFx" Text='<%# (FedExAPIWCF.ShippingServiceType)Enum.Parse(typeof(FedExAPIWCF.ShippingServiceType), Eval("service_type_fx").ToString()) %>' Font-Size="Smaller" />
+                                                                        <asp:Label runat="server" ID="lblServiceTypeFx" Text='<%# (FedExShippingWCF.FedExShipService.ServiceType)Enum.Parse(typeof(FedExShippingWCF.FedExShipService.ServiceType), Eval("service_type_fx").ToString()) %>' Font-Size="Smaller" />
                                                                     </ItemTemplate>
                                                                     <FooterTemplate>
                                                                         <asp:DropDownList ID="ddlServiceTypeAddFx" runat="server" Height="30" AutoPostBack="true" OnSelectedIndexChanged="ddlStep2_SelectedIndexChanged"
@@ -842,7 +842,7 @@
                                                         </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="Service Type" Visible="false">
                                                             <ItemTemplate>
-                                                                <asp:Label runat="server" ID="lblServiceTypeFx" Text='<%# (FedExAPIWCF.ShippingServiceType)Enum.Parse(typeof(FedExAPIWCF.ShippingServiceType), Eval("service_type_fx").ToString()) %>' Font-Size="Smaller" />
+                                                                <asp:Label runat="server" ID="lblServiceTypeFx" Text='<%# (FedExShippingWCF.FedExShipService.ServiceType)Enum.Parse(typeof(FedExShippingWCF.FedExShipService.ServiceType), Eval("service_type_fx").ToString()) %>' Font-Size="Smaller" />
                                                             </ItemTemplate>
                                                             <ItemStyle Font-Size="Large" />
                                                         </asp:TemplateField>

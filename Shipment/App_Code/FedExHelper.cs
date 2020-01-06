@@ -4,7 +4,8 @@ using System.Web;
 using System.Data;
 using System.Web.Services.Protocols;
 using System.Net;
-using FedExAPIWCF;
+using FedExShippingWCF;
+using FedExShippingWCF.FedExShipService;
 using System.Globalization;
 
 /// <summary>
@@ -114,20 +115,20 @@ public class FedExHelper
     public static Commodity CreateCommodity(decimal weight, string description, decimal unit_price, string partno)
     {
         Commodity cmd = new Commodity();
-        cmd.numberOfPiecesField = "1";
-        cmd.countryOfManufactureField = "TW";
-        cmd.weightField = new Weight();
-        cmd.weightField.valueField = weight;
-        cmd.weightField.unitsField = WeightUnits.LB;
-        cmd.descriptionField = description;
-        cmd.quantityUnitsField = "EA";
-        cmd.quantityField = 1;
-        cmd.quantityFieldSpecified = true;
-        cmd.unitPriceField = new Money();
-        cmd.unitPriceField.currencyField = "USD";
-        cmd.unitPriceField.amountField = unit_price;
-        cmd.purposeField = CommodityPurposeType.CONSUMER;
-        cmd.partNumberField = partno;
+        cmd.NumberOfPieces = "1";
+        cmd.CountryOfManufacture = "TW";
+        cmd.Weight = new Weight();
+        cmd.Weight.Value = weight;
+        cmd.Weight.Units = WeightUnits.LB;
+        cmd.Description = description;
+        cmd.QuantityUnits = "EA";
+        cmd.Quantity = 1;
+        cmd.QuantitySpecified = true;
+        cmd.UnitPrice = new Money();
+        cmd.UnitPrice.Currency = "USD";
+        cmd.UnitPrice.Amount = unit_price;
+        cmd.Purpose = CommodityPurposeType.CONSUMER;
+        cmd.PartNumber = partno;
 
         return cmd;
     }

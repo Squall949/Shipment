@@ -23,11 +23,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Shipment", "Shipment\", "{B
 		VWDPort = "7061"
 		SlnRelativePath = "Shipment\"
 	EndProjectSection
-	ProjectSection(ProjectDependencies) = postProject
-		{5FD5052C-E155-4D48-BE9C-A5D4209D9609} = {5FD5052C-E155-4D48-BE9C-A5D4209D9609}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FedExShippingWCF", "FedExShippingWCF\FedExShippingWCF.csproj", "{5FD5052C-E155-4D48-BE9C-A5D4209D9609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +34,6 @@ Global
 		{BAED692D-195F-401B-A7A0-1CA0C7543136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAED692D-195F-401B-A7A0-1CA0C7543136}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAED692D-195F-401B-A7A0-1CA0C7543136}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{5FD5052C-E155-4D48-BE9C-A5D4209D9609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FD5052C-E155-4D48-BE9C-A5D4209D9609}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FD5052C-E155-4D48-BE9C-A5D4209D9609}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FD5052C-E155-4D48-BE9C-A5D4209D9609}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

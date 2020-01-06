@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /Shipment/App_Data/PublishProfiles/demo.pubxml
+/FedExShippingWCF/Properties/PublishProfiles/CustomProfile.pubxml

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using FedExAPIWCF;
+using FedExShippingWCF;
+using FedExShippingWCF.FedExShipService;
 using System.Data;
 using Newtonsoft.Json;
 
@@ -1143,7 +1144,7 @@ public partial class _Default : Page
 
     private List<byte[]> ExecuteFedExShipment()
     {
-        FedExShippingServiceClient client = new FedExShippingServiceClient();
+        FedExShippingService client = new FedExShippingService();
         FedExWebServiceRequest request;
         List<Commodity> list = new List<Commodity>();
         List<byte[]> labelList = new List<byte[]>();
