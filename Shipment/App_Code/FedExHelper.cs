@@ -36,7 +36,7 @@ public class FedExHelper
     {
         switch (shippingType)
         {
-            case ShippingServiceType.FEDEX_GROUND: 
+            case ShippingServiceType.FEDEX_GROUND:
             case ShippingServiceType.GROUND_HOME_DELIVERY:
                 return TrackingIdType.GROUND;
             case ShippingServiceType.FEDEX_EXPRESS_SAVER:
@@ -75,27 +75,34 @@ public class FedExHelper
                 request.TpAccNum = accNum;
                 break;
         }
-        
-        request.DestAddress1 = drShipment["address1"].ToString().Trim();
-        request.DestAddress2 = string.IsNullOrWhiteSpace(drShipment["address2"].ToString()) ? "" : drShipment["address2"].ToString().Trim();
-        request.DestCity = drShipment["city"].ToString().Trim();
-        request.DestCName = drShipment["cname"].ToString().Trim();
-        request.DestCompany = drShipment["company"].ToString().Trim();
-        request.DestCountryCode = drShipment["country"].ToString().Trim();
-        request.DestEmail = drShipment["email"].ToString().Trim();
-        request.DestPostcode = drShipment["postcode"].ToString().Trim();
-        request.DestState = drShipment["state"].ToString().Trim();
-        request.DestTel = drShipment["tel"].ToString().Trim();
-        request.EmailFail = drShipment["emailfail"].ToString().Trim();
-        request.ShippingAddress1 = drShipment["sf_address1"].ToString().Trim();
-        request.ShippingAddress2 = string.IsNullOrWhiteSpace(drShipment["sf_address2"].ToString()) ? "" : drShipment["sf_address2"].ToString().Trim();
-        //request.ShippingAttention = string.IsNullOrWhiteSpace(dr["sf_attention"].ToString()) ? "" : dr["sf_attention"].ToString().Trim();
-        request.ShippingCity = drShipment["sf_city"].ToString().Trim();
-        request.ShippingCName = drShipment["sf_cname"].ToString().Trim();
-        request.ShippingCountryCode = drShipment["sf_country"].ToString().Trim();
-        request.ShippingPostcode = drShipment["sf_postcode"].ToString().Trim();
-        request.ShippingState = drShipment["sf_state"].ToString().Trim();
-        request.ShippingTel = drShipment["sf_tel"].ToString().Trim();
+
+        FedExWebServiceContact recipient = new FedExWebServiceContact();
+        recipient.Address1 = drShipment["address1"].ToString().Trim();
+        recipient.Address2 = string.IsNullOrWhiteSpace(drShipment["address2"].ToString()) ? "" : drShipment["address2"].ToString().Trim();
+        recipient.City = drShipment["city"].ToString().Trim();
+        recipient.Name = drShipment["cname"].ToString().Trim();
+        recipient.Company = drShipment["company"].ToString().Trim();
+        recipient.CountryCode = drShipment["country"].ToString().Trim();
+        recipient.Email = drShipment["email"].ToString().Trim();
+        recipient.Postcode = drShipment["postcode"].ToString().Trim();
+        recipient.State = drShipment["state"].ToString().Trim();
+        recipient.Tel = drShipment["tel"].ToString().Trim();
+        request.Recipient = recipient;
+
+        FedExWebServiceContact shipper = new FedExWebServiceContact();
+        shipper.Email = drShipment["emailfail"].ToString().Trim();
+        shipper.Address1 = drShipment["sf_address1"].ToString().Trim();
+        shipper.Address2 = string.IsNullOrWhiteSpace(drShipment["sf_address2"].ToString()) ? "" : drShipment["sf_address2"].ToString().Trim();
+        if (drShipment.Table.Columns.Contains("sf_attention"))
+            shipper.Name = string.IsNullOrWhiteSpace(drShipment["sf_attention"].ToString()) ? "" : drShipment["sf_attention"].ToString().Trim();
+        shipper.City = drShipment["sf_city"].ToString().Trim();
+        shipper.Company = drShipment["sf_cname"].ToString().Trim();
+        shipper.CountryCode = drShipment["sf_country"].ToString().Trim();
+        shipper.Postcode = drShipment["sf_postcode"].ToString().Trim();
+        shipper.State = drShipment["sf_state"].ToString().Trim();
+        shipper.Tel = drShipment["sf_tel"].ToString().Trim();
+        request.Shipper = shipper;
+
         request.Length = drPackage["length"].ToString().Trim();
         request.Width = drPackage["width"].ToString().Trim();
         request.Height = drPackage["height"].ToString().Trim();

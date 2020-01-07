@@ -5,7 +5,7 @@
 	
 		loading = function() {
 			setTimeout(function () {
-				var loadingImg = $("<img />").attr("src", "../images/loading15.gif").load(function() {
+				var loadingImg = $("<img />").attr("src", "images/loading15.gif").load(function() {
 					var imgWidth = this.width;
 					var imgHeight = this.height;
 	
@@ -35,7 +35,7 @@
 		
 		$(".datepicker").datepicker({
 			showOn: "button",
-			buttonImage: "../images/calendar.gif",
+			buttonImage: "images/calendar.gif",
 			buttonImageOnly: true,
 			buttonText: "Select date",
 			showAnim: "slideDown"
